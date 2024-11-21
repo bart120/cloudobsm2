@@ -42,3 +42,17 @@ services:
     networks:
       - backend
       - frontend
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - 80:80
+    environment:
+      - WORDPRESS_DB_HOST=database
+      - WORDPRESS_DB_NAME=testdb
+      - WORDPRESS_DB_USER=toto
+      - WORDPRESS_DB_PASSWORD=${ROOT_PWD}
+    networks:
+      - backend
+      - frontend
+    depends_on:
+      - database
