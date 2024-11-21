@@ -1,0 +1,44 @@
+version: '3.9'
+
+networks:
+  backend:
+    name: ${NETWORK_PRIVATE}
+    external: false
+  frontend:
+    name: frontend-network
+
+services:
+  database:
+    container_name: mysql-cont
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=${ROOT_PWD}
+      - MYSQL_DATABASE=testdb
+      - MYSQL_USER=toto
+      - MYSQL_PASSWORD=${ROOT_PWD}
+    networks:
+      - backend
+    volumes:
+      - D:\formation\docker\ynov\volumes\data:/var/lib/mysql
+    restart: always
+  myadmin:
+    container_name: phpmyadmin-cont
+    image: phpmyadmin:latest
+    environment:
+      - PMA_HOST=database
+    networks:
+      - backend
+      - frontend
+    ports:
+      - 8081:80
+    depends_on:
+      - database
+    restart: always
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 9090:8080
+    networks:
+      - backend
+      - frontend
