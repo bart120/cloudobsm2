@@ -1,0 +1,43 @@
+#namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test
+---
+#deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dep
+  namespace: test
+spec:
+  replicas: 1
+  matchLabels:
+    app: nginx
+  template:
+    metadata:
+      name: nginx-pod
+      namespace: test
+      labels: 
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-cont
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+---
+#service
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-serv
+  namespace: test
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+  type: LoadBalancer
