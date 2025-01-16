@@ -4,7 +4,7 @@
 # deploiement de 1 pod avec un phpmyadmin
 # service d'accès à mysql interne au cluster
 # service d'accès à l'application wordpress depuis l'extérieur port 80
-# service d'accès à l'application phpmyadmin depuis l'extérieur port 80
+# service d'accès à l'application phpmyadmin depuis l'extérieur port 8080
 # service d'ingress (avec ingress) pour répartir les routes
 # - http://localhost/wordpress => service wordpress
 # - http://localhost/phpmyadmin => service phpmyadmin
