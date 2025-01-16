@@ -1,0 +1,99 @@
+# dans un namespace "myadmin"
+# deploiement de 1 pod d'une base de données mysql (attention, on parle d'une base de données!!!!!!)
+# deploiement de 3 pods wordpress
+# deploiement de 1 pod avec un phpmyadmin
+# service d'accès à mysql interne au cluster
+# service d'accès à l'application wordpress depuis l'extérieur port 80
+# service d'accès à l'application phpmyadmin depuis l'extérieur port 80
+# service d'ingress (avec ingress) pour répartir les routes
+# - http://localhost/wordpress => service wordpress
+# - http://localhost/phpmyadmin => service phpmyadmin
+# Attention, vous devrez changer le type des services wordpress et phpmyadmin
+
+#namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: myadmin
+---
+#apiVersion: v1
+#kind: PersistentVolume
+#metadata:
+#  name: myadmin-pv
+#spec:
+#  capacity:
+#    storage: 10Gi
+#  accessModes:
+#    - ReadWriteOnce
+#  hostPath:
+#    path: D:\\formation\\docker\\ynov\\volumes\\data
+#  persistentVolumeReclaimPolicy: Retain
+#---
+#persistentvolumeclaim
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: myadmin-volume-claim
+#  namespace: myadmin
+#spec:
+#  accessModes: 
+#    - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 2Gi
+#  storageClassName: standard
+#---
+#deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-dep
+  namespace: myadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      name: mysql-pod
+      namespace: myadmin
+      labels: 
+        app: mysql
+    spec:
+      containers:
+      - name: mysql-cont
+        image: mysql:latest
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: toto
+        - name: MYSQL_DATABASE
+          value: db_test
+        - name: MYSQL_USER
+          value: bob
+        - name: MYSQL_PASSWORD
+          value: toto
+#        volumeMounts:
+#        - name: mysql-data
+#          mountPath: /var/lib/mysql
+#      volumes:
+#      - name: mysql-data
+#        persistentVolumeClaim: 
+#          claimName: myadmin-volume-claim
+---
+#service
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-serv
+  namespace: myadmin
+spec:
+  selector:
+    app: mysql
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: ClusterIP

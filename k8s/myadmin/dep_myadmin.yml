@@ -1,0 +1,42 @@
+
+#deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin-dep
+  namespace: myadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      name: phpmyadmin-pod
+      namespace: myadmin
+      labels: 
+        app: phpmyadmin
+    spec:
+      containers:
+      - name: phpmyadmin-cont
+        image: phpmyadmin:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: PMA_HOST
+          value: mysql-serv
+---
+#service
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin-serv
+  namespace: myadmin
+spec:
+  selector:
+    app: phpmyadmin
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+  type: LoadBalancer
