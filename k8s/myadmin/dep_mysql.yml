@@ -10,12 +10,7 @@
 # - http://localhost/phpmyadmin => service phpmyadmin
 # Attention, vous devrez changer le type des services wordpress et phpmyadmin
 
-#namespace
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: myadmin
----
+
 #apiVersion: v1
 #kind: PersistentVolume
 #metadata:
@@ -43,6 +38,7 @@ metadata:
 #      storage: 2Gi
 #  storageClassName: standard
 #---
+
 #deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -76,12 +72,12 @@ spec:
         - name: MYSQL_PASSWORD
           value: toto
 #        volumeMounts:
-#        - name: mysql-data
+#        - name: mysql-storage
 #          mountPath: /var/lib/mysql
 #      volumes:
-#      - name: mysql-data
+#      - name: mysql-storage
 #        persistentVolumeClaim: 
-#          claimName: myadmin-volume-claim
+#          claimName: mysql-pvc
 ---
 #service
 apiVersion: v1

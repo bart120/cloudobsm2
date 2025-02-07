@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-myadmin
+  namespace: myadmin
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /myadmin(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend: 
+          service:
+            name: phpmyadmin-serv
+            port: 
+              number: 80
+      - path: /wordpress(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend: 
+          service:
+            name: wordpress-serv
+            port: 
+              number: 80

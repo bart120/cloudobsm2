@@ -1,0 +1,35 @@
+#namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: myadmin
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+  namespace: myadmin
+spec:
+  capacity:
+    storage: 1Gi
+#  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+#  storageClassName: manual
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: "D:/data/mysql"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+  namespace: myadmin
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: mysql-pv
+  storageClassName: docker-sc

@@ -31,6 +31,12 @@ spec:
           value: toto
         - name: WORDPRESS_DB_NAME
           value: db_test
+        - name: WORDPRESS_CONFIG_EXTRA
+          value: |
+            define('DOMAIN_CURRENT_SITE', 'localhost');
+            define('PATH_CURRENT_SITE', '/wordpress');
+            define('WP_HOME', 'http://localhost/wordpress/');
+            define('WP_SITEURL', 'http://localhost/wordpress/');
 ---
 #service
 apiVersion: v1

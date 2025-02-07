@@ -25,6 +25,8 @@ spec:
         env:
         - name: PMA_HOST
           value: mysql-serv
+        - name: PMA_ABSOLUTE_URI
+          value: http://localhost/myadmin
 ---
 #service
 apiVersion: v1
