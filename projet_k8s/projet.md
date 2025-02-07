@@ -92,7 +92,7 @@ Les étudiants sont encouragés (mais pas obligés) à mettre en place un systè
 
 # Soutenance et rendu
 
-La soutenance aura lieux le lundi 17 mars 2024.
+La soutenance aura lieux le lundi 17 mars 2025.
 Le rendu se fera le lundi 17 mars à 23h59 maxi.
 Les horaires de passage sont définis pour chaque groupe.
 Toute absence à la soutenance entrainera un 0 (ZERO) pour le membre du groupe.
@@ -110,20 +110,24 @@ Pour tout autre type de fichier, veuillez demander à l'enseignant si son inclus
 La soutenance dure 20 minutes durant lesquelles les membres présentent leur travail. Un échange de questions peut se faire entre le professeur et les membres du groupe.
 
 Les groupes sont les suivants:
-
+- Ilyes, Salim, Salah, Rahyan et Nassim
+- Anouk, Regis, Philip et Ben
+- Leo Bourse, Paco Hameline et Kylian Boin
+- Stephen, Thomas Prouchandy et Guilhem
+- Martin, Damien, Antoine et Simon
+- Yasmine, Laeticia, Amayas et Sid Ahmed
+- Lamiae, Marvin, Thomas Soutif et Grégoire
+- Issaga, Fatou, Alois, Johan
 
 Les horaires de passage des groupes sont les suivants:
- 
-- 10h:  
-- 10h30: 
-- 11h: 
-- 11h30: 
-- 12h: 
-- 12h30: 
-- 14h: 
-- 14h30: 
-- 15h: 
-- 15h30: 
-- 16h: 
+   
+- 10h30: Ilyes, Salim, Salah, Rahyan et Nassim
+- 11h: Martin, Damien, Antoine et Simon
+- 11h30: Leo Bourse, Paco Hameline et Kylian Boin
+- 12h: Lamiae, Marvin, Thomas Soutif et Grégoire
+- 12h30: Stephen, Thomas Prouchandy et Guilhem
+- 14h: Anouk, Regis, Philip et Ben
+- 14h30: Yasmine, Laeticia, Amayas et Sid Ahmed
+- 15h: Issaga, Fatou, Alois, Johan
 
 Pour ceux dont le groupe n'est pas dans la liste, contactez-moi très rapidement à vincent.leclerc@ynov.com
