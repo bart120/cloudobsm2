@@ -119,15 +119,13 @@ Les groupes sont les suivants:
 - Lamiae, Marvin, Thomas Soutif et Grégoire
 - Issaga, Fatou, Alois, Johan
 
-Les horaires de passage des groupes sont les suivants:
+Les horaires de passage des groupes sont les suivants (29 avril 2025):
    
 - 10h30: Ilyes, Salim, Salah, Rahyan et Nassim
 - 11h: Martin, Damien, Antoine et Simon
-- 11h30: Leo Bourse, Paco Hameline et Kylian Boin
-- 12h: Lamiae, Marvin, Thomas Soutif et Grégoire
+- 11h30: Anouk, Regis, Philip et Ben
+- 12h: Yasmine, Laeticia, Amayas et Sid Ahmed
 - 12h30: Stephen, Thomas Prouchandy et Guilhem
-- 14h: Anouk, Regis, Philip et Ben
-- 14h30: Yasmine, Laeticia, Amayas et Sid Ahmed
 - 15h: Issaga, Fatou, Alois, Johan
 
 Pour ceux dont le groupe n'est pas dans la liste, contactez-moi très rapidement à vincent.leclerc@ynov.com
